@@ -1,0 +1,87 @@
+{
+	"$schema": "https://json-schema.org/draft/2019-09/schema#",
+	"$id": "http://schemas.test.com/TestV1.schema.yaml",
+	"title": "Headers for the TestV1 message",
+	"description": "",
+	"self": {
+		"vendor": "test.com",
+		"name": "TestV1",
+		"version": "1-0-0",
+		"format": "jsonschema"
+	},
+	"type": "object",
+	"properties": {
+		"type": "object",
+		"properties": {
+			"TestReference": {
+				"description": "Unique reference",
+				"type": "string",
+				"example": "140374633-6J9"
+			},
+			"TestId": {
+				"description": "Test Id",
+				"type": "integer",
+				"example": 12565457
+			},
+			"TestType": {
+				"description": "Type of notification ...",
+				"type": "string",
+				"example": "Full"
+			},
+			"Priority": {
+				"type": "integer",
+				"minimum": 1,
+				"maximum": 5,
+				"description": "Priority of the message (1 is the highest priority)",
+				"example": 5
+			},
+			"Channel": {
+				"description": "Channel to send the notification to",
+				"type": "string",
+				"enum": [
+					"email",
+					"push"
+				]
+			},
+			"StatusCode": {
+				"description": "Status code",
+				"type": "integer",
+				"example": 202
+			},
+			"StatusText": {
+				"description": "Status description",
+				"type": "string",
+				"example": "Accepted"
+			},
+			"DateSent": {
+				"description": "Datetime the",
+				"type": "string",
+				"format": "date-time",
+				"example": "2021-07-02T14:09:24.3803222Z"
+			},
+			"CorrelationId": {
+				"description": "CorrelationId",
+				"type": "string",
+				"example": "tSJy4lbyEPQe8pg"
+			},
+			"TestUri": {
+				"description": "Uri to document create",
+				"type": "string",
+				"format": "uri",
+				"example": "https://test.blob.core.windows.net/**/V1.txt"
+			}
+		},
+		"required": [
+			"TestReference",
+			"TestId",
+			"TestType",
+			"Priority",
+			"Channel",
+			"StatusCode",
+			"StatusText",
+			"DateSent",
+			"CorrelationId",
+			"TestUri"
+		]
+	}
+}
